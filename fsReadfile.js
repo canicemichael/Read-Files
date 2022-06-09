@@ -14,14 +14,14 @@ const fs = require('fs');
 //     }    
 // })
 
-function jsonReader(filePath, cb) {
+function jsonReader(filePath, cb){
     fs.readFile(filePath, 'utf-8', (err, fileData) => {
-        if (err) {
+        if (err){
             return cb && cb(err);
         }
 
         try {
-            const object = JSON.parse(fileData);
+            const object = JSON.parse(fileData)
             return cb && cb(null, object);
         } catch (error) {
             return cb && cb(err);
@@ -29,14 +29,14 @@ function jsonReader(filePath, cb) {
     })
 }
 
-function done(path){
-    jsonReader(path, (err, data) => {
-        if (err) {
-            console.log(err)
+function done(filePath){
+    jsonReader(filePath, (err, data) => {
+        if (err){
+            console.log(err);
         } else {
             console.log(data);
         }
     })
 }
 
-done('./sample2.json');
+done('sample2.json');
