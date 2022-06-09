@@ -39,4 +39,6 @@ function done(filePath){
     })
 }
 
-done('sample2.json');
+// done('sample2.json');
+
+module.exports = jsonReader;
